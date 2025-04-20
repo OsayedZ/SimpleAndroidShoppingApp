@@ -1,5 +1,6 @@
 package com.example.farmshopping;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -96,6 +97,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             productName.setText(product.getName());
             productPrice.setText(String.format("$%.2f", product.getPrice()));
             productQuantity.setText(String.format("Quantity: %d", product.getQuantity()));
+
+            // Make the entire item view clickable
+            itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(mainActivity, ProductDetailsActivity.class);
+                intent.putExtra("product", product);
+                mainActivity.startActivity(intent);
+            });
 
             addToCartButton.setOnClickListener(v -> {
                 mainActivity.addToCart(product);
