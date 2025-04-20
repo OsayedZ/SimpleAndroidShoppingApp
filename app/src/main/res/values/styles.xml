@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base text appearance style -->
+    <style name="TextAppearance.FarmShopping" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Common text styles -->
+    <style name="TextAppearance.FarmShopping.Headline" parent="TextAppearance.FarmShopping">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.FarmShopping.Subtitle" parent="TextAppearance.FarmShopping">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.FarmShopping.Body" parent="TextAppearance.FarmShopping">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Base widget style -->
+    <style name="Widget.FarmShopping" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Button styles -->
+    <style name="Widget.FarmShopping.Button" parent="Widget.FarmShopping">
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/button_background</item>
+    </style>
+
+    <!-- Card styles -->
+    <style name="Widget.FarmShopping.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_margin">8dp</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+</resources> 
