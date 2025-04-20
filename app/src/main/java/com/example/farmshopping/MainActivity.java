@@ -64,7 +64,11 @@ public class MainActivity extends AppCompatActivity {
         setupProductList();
         // Load saved cart items
         loadCartItems();
-
+        
+        // Update the adapter with cart items
+        if (productAdapter != null) {
+            productAdapter.updateCartItems(cartItems);
+        }
     }
 
     private void initializeViews() {
@@ -148,7 +152,10 @@ public class MainActivity extends AppCompatActivity {
         if (product.getQuantity() > 0) {
             cartItems.add(product);
             saveCartItems();
-            productAdapter.notifyDataSetChanged();
+            // Update the adapter with the new cart items
+            if (productAdapter != null) {
+                productAdapter.updateCartItems(cartItems);
+            }
             Toast.makeText(this, "Added to cart", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Product out of stock", Toast.LENGTH_SHORT).show();
@@ -172,5 +179,9 @@ public class MainActivity extends AppCompatActivity {
     private void saveCartItems() {
         String cartJson = new Gson().toJson(cartItems);
         sharedPreferences.edit().putString("cart", cartJson).apply();
+    }
+    
+    public List<Product> getCartItems() {
+        return cartItems;
     }
 }
